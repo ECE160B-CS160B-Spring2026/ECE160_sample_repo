@@ -86,10 +86,13 @@ int count_sos(int x, int y, char c) {
 }
 
 int board_full() {
-    for (int i = 0; i < N; i++)
-        for (int j = 0; j < N; j++)
-            if (board[i][j] == EMPTY)
+    for (int i = 0; i < N; i++){
+        for (int j = 0; j < N; j++){
+            if (board[i][j] == EMPTY){
                 return 0;
+            }
+        }
+    }
     return 1;
     // loop thru all board spaces and see if any are non-empty
 }
@@ -130,12 +133,15 @@ int main() {
     print_board();
     printf("\nGame over! Final Scores: Player 1: %d | Player 2: %d\n", score[0], score[1]);
 
-    if (score[0] > score[1])
+    if (score[0] > score[1]){
         printf("Player 1 wins!\n");
-    else if (score[1] > score[0])
+    }
+    else if (score[1] > score[0]){
         printf("Player 2 wins!\n");
-    else
+    }
+    else{
         printf("It's a tie!\n");
+    }
 
     return 0;
 }
