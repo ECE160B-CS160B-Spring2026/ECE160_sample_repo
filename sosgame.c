@@ -30,14 +30,17 @@ void print_board(){ //we print the board now
 
     //print column numbers:
     printf("\n  "); //print a blank line and make some space between column #s
-    for (int j = 0; j < N; j++) printf("%d ", j); //print each column # at the top
+    for (int j = 0; j < N; j++){
+        printf("%d ", j); //print each column # at the top
+    }
     printf("\n"); // make new line
 
     //now print the actual board:
     for (int i = 0; i < N; i++) {
         printf("%d ", i); //print the row number at the start of each row
-        for (int j = 0; j < N; j++)
+        for (int j = 0; j < N; j++){
             printf("%c ", board[i][j]); //print the actual values in the board 
+        }
         printf("\n"); //more space to make it clear
     }
 }
@@ -66,7 +69,8 @@ int count_sos(int x, int y, char c) {
                 }
             }
         }
-    } else if (c == 'S'){
+    }
+    else if (c == 'S'){
         // S must be in the side
         for (int d = 0; d < 8; d++){ //8 options
             int xo = x + dx[d];
